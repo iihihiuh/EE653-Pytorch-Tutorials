@@ -64,5 +64,4 @@ class VGG(nn.Module):
         x = self.avgpool(x)
         x = x.flatten(1)
         x = self.classifier(x)
-        
         return x

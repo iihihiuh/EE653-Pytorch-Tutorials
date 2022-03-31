@@ -6,6 +6,7 @@ def main(args):
     # and gradients associated with it
 
     # For example, a linear layer
+    # x @ w + bias
     Weights = torch.randn(1024, 2048)
     Bias = torch.randn(2048) 
     print(Weights.requires_grad, Bias.requires_grad)   
@@ -24,6 +25,7 @@ def main(args):
     y = x @ Weights + Bias
 
     # backward pass
+    # loss.backward()
     y.backward(gradient=grads)
 
     print(Weights.grad.size(), Bias.grad.size())
